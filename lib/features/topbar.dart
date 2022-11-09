@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Topbar extends StatefulWidget {
   Topbar({super.key});
@@ -22,13 +24,16 @@ class _TopbarState extends State<Topbar> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SvgPicture.asset("assets/images/location-icon.svg"),
-            SizedBox(width: 10),
+            SizedBox(width: 2.h),
             DropdownButton(
                 isDense: true,
                 underline: SizedBox(),
                 value: widget.dropdownvalue,
                 iconEnabledColor: Color(0xff2E3A59),
-                icon: SvgPicture.asset("assets/images/arrow_down.svg"),
+                icon: Padding(
+                  padding: EdgeInsets.only(left: 1.w),
+                  child: SvgPicture.asset("assets/images/arrow_down.svg"),
+                ),
                 items: widget.items.map((String items) {
                   return DropdownMenuItem(
                     value: items,

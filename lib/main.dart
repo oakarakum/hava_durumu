@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hava_durumu/pages/homepage_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: HomePageScreen(),
+          home: const MyHomePage(title: 'Flutter Demo Home Page'),
         );
       },
     );

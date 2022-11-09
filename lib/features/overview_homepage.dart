@@ -50,7 +50,7 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
             ),
             SizedBox(height: 1.2.h),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              
               children: [
                 SvgPicture.asset(
                   "assets/images/cloudy_rain_overview.svg",
@@ -60,11 +60,11 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
                   width: 30.w,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 13),
+                  padding: const EdgeInsets.only(bottom: 13,left: 20),
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 58),
+                        padding: const EdgeInsets.only(right: 57),
                         child: Text("18º C",
                             style: TextStyle(
                                 fontSize: 20,
@@ -85,20 +85,21 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.only(top: 8),
                   child: Text("Last update 3.00 PM",
                       style: TextStyle(color: Color(0xffFFFFFF))),
                 ),
                 SizedBox(width: 2.w),
                 Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: SvgPicture.asset(
-                        "assets/images/retry.svg",
-                        height: 2.h,
-                      ),
-                    ))
+                  padding: const EdgeInsets.only(top: 8),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: SvgPicture.asset(
+                      "assets/images/retry.svg",
+                      height: 2.h,
+                    ),
+                  ),
+                )
               ],
             )
           ],

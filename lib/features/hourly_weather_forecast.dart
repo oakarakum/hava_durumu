@@ -32,11 +32,11 @@ class _HourlyWeatherForecastState extends State<HourlyWeatherForecast> {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 0.1.h,
+                      top: 2.h,
                       left: 0.5,
                       right: 0.5.w,
                       child: SvgPicture.asset(
-                        "assets/images/cloudy rain.svg",
+                        "assets/images/storm_daily-.svg",height: 4.5.h,width :3.w
                       ),
                     ),
                     Positioned(

@@ -19,7 +19,7 @@ class _DailyRecommendationListViewState
     return SizedBox(
       height: 40.h,
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: 4,
         itemBuilder: (context, index) {
           return Container(
             height: 10.h,
@@ -36,8 +36,8 @@ class _DailyRecommendationListViewState
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: SvgPicture.asset("assets/images/thunderstorm.svg"),
+                      padding: EdgeInsets.only(top: 10,left: 20,bottom: 15),
+                      child: SvgPicture.asset("assets/images/rainy-daily.svg"),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,

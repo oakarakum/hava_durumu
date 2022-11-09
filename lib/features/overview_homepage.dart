@@ -1,12 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
-/* import 'package:flutter_svg/flutter_svg.dart';
- */
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class OverviewHomepage extends StatefulWidget {
   const OverviewHomepage({super.key});
@@ -23,7 +19,7 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
       width: 95.w,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-          color: Color.fromARGB(255, 219, 209, 209).withOpacity(0.5),
+          color: Color.fromARGB(255, 220, 209, 209).withOpacity(0.5),
           spreadRadius: 5,
           blurRadius: 4,
           offset: Offset(0, 3), // changes position of shadow

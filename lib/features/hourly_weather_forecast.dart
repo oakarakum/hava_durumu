@@ -27,7 +27,7 @@ class _HourlyWeatherForecastState extends State<HourlyWeatherForecast> {
                 width: 20.w,
                 margin: EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 245, 237, 237),
+                    color: Color.fromARGB(255, 249, 247, 247),
                     borderRadius: BorderRadius.circular(10)),
                 child: Stack(
                   children: [

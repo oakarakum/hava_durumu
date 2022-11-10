@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hava_durumu/pages/weather_detail_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DailyRecommendationListView extends StatefulWidget {

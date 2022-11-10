@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:hava_durumu/features/daily_daily_recommendation_listview.dart';
+import 'package:hava_durumu/features/daily_recommendation_listview.dart';
 import 'package:hava_durumu/features/daily_recommendation.dart';
 import 'package:hava_durumu/features/hourly_weather_forecast.dart';
 import 'package:hava_durumu/features/overview_homepage.dart';

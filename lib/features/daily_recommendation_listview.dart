@@ -36,7 +36,7 @@ class _DailyRecommendationListViewState
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 10,left: 20,bottom: 15),
+                      padding: EdgeInsets.only(top: 10, left: 20, bottom: 15),
                       child: SvgPicture.asset("assets/images/rainy-daily.svg"),
                     ),
                     Column(

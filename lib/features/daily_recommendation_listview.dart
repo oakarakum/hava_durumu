@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hava_durumu/pages/weather_detail_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DailyRecommendationListView extends StatefulWidget {
@@ -36,7 +37,7 @@ class _DailyRecommendationListViewState
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 10,left: 20,bottom: 15),
+                      padding: EdgeInsets.only(top: 10, left: 20, bottom: 15),
                       child: SvgPicture.asset("assets/images/rainy-daily.svg"),
                     ),
                     Column(

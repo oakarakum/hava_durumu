@@ -35,9 +35,8 @@ class _HourlyWeatherForecastState extends State<HourlyWeatherForecast> {
                       top: 2.h,
                       left: 0.5,
                       right: 0.5.w,
-                      child: SvgPicture.asset(
-                        "assets/images/storm_daily-.svg",height: 4.5.h,width :3.w
-                      ),
+                      child: SvgPicture.asset("assets/images/storm_hourly.svg",
+                          height: 4.5.h, width: 3.w),
                     ),
                     Positioned(
                       top: 65,

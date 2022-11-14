@@ -12,41 +12,30 @@ class DetailInfoGridview extends StatefulWidget {
 }
 
 class _DetailInfoGridviewState extends State<DetailInfoGridview> {
-  
-  List<String> detailGridIcon =[
+  List<String> detailGridIcon = [
     "assets/images/humidity.svg",
     "assets/images/air_pressure.svg",
     "assets/images/wind_velocity.svg",
     "assets/images/fog.svg"
-
-
   ];
 
-  List<String> detailGridNum =[
-    "86%",
-    "940 hPa",
-    "1 km/h",
-    "14%"
+  List<String> detailGridNum = ["86%", "940 hPa", "1 km/h", "14%"];
 
-
-  ];
-
-  List<String> detailGridInfo =[
+  List<String> detailGridInfo = [
     "Humidity",
-    "air Pressure",
+    "Air Pressure",
     "Wind Velocity",
     "Fog"
-
-
-  ];  
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: 30.h,
         width: 100.w,
         child: GridView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            padding: EdgeInsets.zero,
             itemCount: detailGridIcon.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -59,7 +48,7 @@ class _DetailInfoGridviewState extends State<DetailInfoGridview> {
                 height: 5.h,
                 width: 10.w,
                 decoration: BoxDecoration(
-                    color: Color(0xffFAFAFA),
+                    color: Color(0xffFBFBFB),
                     borderRadius: BorderRadius.circular(12)),
                 child: Padding(
                   padding: EdgeInsets.only(left: 6.w, top: 3.h),

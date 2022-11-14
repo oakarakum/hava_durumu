@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hava_durumu/pages/homepage_screen.dart';
 import 'package:hava_durumu/pages/weather_detail_screen.dart';
+import 'package:hava_durumu/providers/weather_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<WeatherProvider>(create: (_) => WeatherProvider())
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

@@ -7,7 +7,10 @@ import 'package:hava_durumu/features/daily_recommendation.dart';
 import 'package:hava_durumu/features/hourly_weather_forecast.dart';
 import 'package:hava_durumu/features/overview_homepage.dart';
 import 'package:hava_durumu/features/topbar.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../providers/weather_provider.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -18,6 +21,14 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   @override
+  void initState() {
+    super.initState();
+
+    final wetProvider = Provider.of<WeatherProvider>(context, listen: false);
+    wetProvider.getWeatherData(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
@@ -25,9 +36,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
         toolbarHeight: 0,
         backgroundColor: Colors.white,
       ),
-      body: FadeIn(
-        animate: true,
-        delay: Duration(microseconds: 10000),
+      body: FadeInDown(
+        //animate: true,
+        delay: Duration(microseconds: 100000),
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),

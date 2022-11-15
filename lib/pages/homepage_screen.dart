@@ -21,13 +21,6 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageScreenState extends State<HomePageScreen> {
   @override
-  void initState() {
-    super.initState();
-
-    final wetProvider = Provider.of<WeatherProvider>(context, listen: false);
-    wetProvider.getWeatherData(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

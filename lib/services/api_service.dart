@@ -31,11 +31,12 @@ Future<DailyWeatherResponse?> getDailyData(context) async {
   try {
     final response2 = await http.get(Uri.parse(
         "http://api.openweathermap.org/data/2.5/forecast?appid=9b0ef33925d3f78d3c7591c48ca1cce9&id=524901&units=metric"));
-    dailyResponse = DailyWeatherResponse.fromJson(jsonDecode(response2.body));
+    print(response2.body);
+    return dailyResponse =
+        DailyWeatherResponse.fromJson(jsonDecode(response2.body));
     //temp = jsonDecode(response.body);
     //print(temp["main"]["temp"]);
-    //return dailyResponse;
-    print(response2.body);
+
   } catch (a) {
     log(a.toString());
   }

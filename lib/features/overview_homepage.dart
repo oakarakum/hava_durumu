@@ -7,6 +7,7 @@ import 'package:hava_durumu/pages/weather_detail_screen.dart';
 import 'package:hava_durumu/providers/weather_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:string_extensions/string_extensions.dart';
 
 class OverviewHomepage extends StatefulWidget {
   const OverviewHomepage({super.key});
@@ -84,7 +85,9 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
                                     color: Color(0xffFFFFFF),
                                     fontWeight: FontWeight.w400)),
                           ),
-                          Text(value.response.weather![0].description!,
+                          Text(
+                              "${value.response.weather![0].description!}"
+                                  .capitalize!,
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,

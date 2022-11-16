@@ -13,4 +13,12 @@ class WeatherProvider with ChangeNotifier {
     isloading = false;
     notifyListeners();
   }
+
+  getAnimation(bool isLoading) async {
+    isloading = false;
+    await Duration(seconds: 2);
+    isloading = true;
+    notifyListeners();
+    return isloading;
+  }
 }

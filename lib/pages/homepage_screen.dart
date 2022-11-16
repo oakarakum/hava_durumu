@@ -31,15 +31,15 @@ class _HomePageScreenState extends State<HomePageScreen> {
       ),
       body: FadeInDown(
         //animate: true,
-        delay: Duration(microseconds: 100000),
+        delay: Duration(milliseconds: 2000),
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
-                SizedBox(height: 5.h),
+                SizedBox(height: 3.h),
                 Topbar(),
-                SizedBox(height: 5.h),
+                SizedBox(height: 3.h),
                 OverviewHomepage(),
                 SizedBox(height: 2.5.h),
                 Row(
@@ -54,9 +54,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 3.h),
+                SizedBox(height: 2.5.h),
                 HourlyWeatherForecast(),
-                SizedBox(height: 3.h),
+                SizedBox(height: 2.5.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -71,7 +71,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ),
                 SizedBox(height: 2.5.h),
                 DailyRecommendation(),
-                SizedBox(height: 2.5.h),
+                SizedBox(height: 2.h),
                 DailyRecommendationListView()
               ],
             ),

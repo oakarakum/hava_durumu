@@ -28,7 +28,7 @@ class AppAssets {
       "assets/images/thunderstorm-daily.svg";
   static const String rainy_daily = "assets/images/rainy-daily.svg";
 
-//Seocnd page
+//Second page
 //Detail Information SVG Image List
 
   static const String scoring_detail = "assets/images/scoring.svg";

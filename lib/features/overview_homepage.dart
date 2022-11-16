@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hava_durumu/modals/current_weather_response.dart';
+import 'package:hava_durumu/models/current_weather_response.dart';
 import 'package:hava_durumu/pages/weather_detail_screen.dart';
 import 'package:hava_durumu/providers/weather_provider.dart';
 import 'package:provider/provider.dart';

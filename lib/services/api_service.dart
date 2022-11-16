@@ -2,7 +2,9 @@
 
 import 'dart:convert';
 import 'dart:developer';
-import '../modals/current_weather_response.dart';
+import 'package:hava_durumu/models/daily_weather_response.dart';
+
+import '../models/current_weather_response.dart';
 import 'package:http/http.dart' as http;
 
 Future<CurrentWeatherResponse?> getCurrentData(context) async {
@@ -19,6 +21,23 @@ Future<CurrentWeatherResponse?> getCurrentData(context) async {
     //print(response.body);
   } catch (e) {
     log(e.toString());
+  }
+  return null;
+}
+
+Future<DailyWeatherResponse?> getDailyData(context) async {
+  DailyWeatherResponse dailyResponse;
+  //var temp;
+  try {
+    final response2 = await http.get(Uri.parse(
+        "http://api.openweathermap.org/data/2.5/forecast?appid=9b0ef33925d3f78d3c7591c48ca1cce9&id=524901&units=metric"));
+    dailyResponse = DailyWeatherResponse.fromJson(jsonDecode(response2.body));
+    //temp = jsonDecode(response.body);
+    //print(temp["main"]["temp"]);
+    //return dailyResponse;
+    print(response2.body);
+  } catch (a) {
+    log(a.toString());
   }
   return null;
 }

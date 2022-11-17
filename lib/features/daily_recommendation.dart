@@ -20,8 +20,10 @@ class _DailyRecommendationState extends State<DailyRecommendation> {
       height: 10.h,
       width: double.infinity,
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/pink_rectangle.png"),fit: BoxFit.cover),        
-                   borderRadius: BorderRadius.circular(12)),
+          image: DecorationImage(
+              image: AssetImage("assets/images/pink_rectangle.png"),
+              fit: BoxFit.fill),
+          borderRadius: BorderRadius.circular(12)),
       child: Row(
         children: [
           SizedBox(width: 3.w),

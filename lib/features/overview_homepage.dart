@@ -76,7 +76,7 @@ class _OverviewHomepageState extends State<OverviewHomepage> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 57),
+                            padding: const EdgeInsets.only(right: 96),
                             child: Text(
                                 "${value.response.toJson()["main"]["temp"].round()}° C",
                                 style: TextStyle(

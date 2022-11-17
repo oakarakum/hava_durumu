@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hava_durumu/core/app_constant.dart';
 import 'package:hava_durumu/pages/weather_detail_screen.dart';
+import 'package:hava_durumu/providers/daily_bottom_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -19,18 +20,18 @@ class DailyRecommendationListView extends StatefulWidget {
 
 class _DailyRecommendationListViewState
     extends State<DailyRecommendationListView> {
-  List<String> nameoftheday = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
-  ];
+  DailyBottomProvider? dailyBottomProviderr;
+  @override
+  void initState() {
+    super.initState();
+    dailyBottomProviderr =
+        Provider.of<DailyBottomProvider>(context, listen: false);
+    dailyBottomProviderr!.getDailyBottomData(context);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: ((context, DayyJson value, widget) {
+    return Consumer(builder: ((context, DailyBottomProvider value, widget) {
       return SizedBox(
         height: 40.h,
         child: ListView.builder(
@@ -61,9 +62,8 @@ class _DailyRecommendationListViewState
                         children: [
                           Spacer(),
                           Padding(
-                            padding: EdgeInsets.only(left:9.w),
-                            child: Text( nameoftheday[index]
-                              /* "${value.dayList![index]["DayNum"].toString()}" */,
+                            padding: EdgeInsets.only(left: 9.w),
+                            child: Text("${value.dayList![index]["Day"]}",
                                 style: TextStyle(
                                     color: Color(0xff201C1C),
                                     fontWeight: FontWeight.w600)),
@@ -71,7 +71,9 @@ class _DailyRecommendationListViewState
                           SizedBox(height: 1.h),
                           Padding(
                             padding: const EdgeInsets.only(left: 35),
-                            child: Text("Thunderstorm",
+                            child: Text(
+                                "${value.dailyBottomResponse.list![index].weather![0].description.toString().split(".").last}",
+                                //value.dailyBottomResponse.list![index].weather![0].description.toString(), çalışmayan örnek
                                 style: TextStyle(color: Color(0xff201C1C))),
                           ),
                           Spacer(),
@@ -84,7 +86,8 @@ class _DailyRecommendationListViewState
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text("19º C",
+                        Text(
+                            "${value.dailyBottomResponse.list![index].main?.temp}ºC",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff201C1C))),

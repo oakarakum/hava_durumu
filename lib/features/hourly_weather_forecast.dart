@@ -34,7 +34,7 @@ class _HourlyWeatherForecastState extends State<HourlyWeatherForecast> {
       return SizedBox(
         height: 15.h,
         child: ListView.builder(
-            itemCount: 4,
+            itemCount: 6,
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemBuilder: ((context, index) {

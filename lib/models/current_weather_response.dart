@@ -128,46 +128,18 @@ class Weather {
   }
 }
 
-//İlk listedeki haftanın günlerini içeren liste
-class DayyJson with ChangeNotifier {
+class DayyJson {
   List? dayList = [
-    [
-      {"Day": "Monday",
-        "DayNum": 1
-      }
-    ],
-    [
-      {"Day": "Tuesday","DayNum": 2}
-      
-    ],
-    [
-      {"Day": "Wednesday","DayNum": 3}
-    ],
-    [
-      {"Day": "Thursday","DayNum": 4}
-    ],
-    [
-      {"Day": "Friday","DayNum": 5}
-    ],
-    [
-      {"Day": "Saturday","DayNum": 6}
-    ],
-    [
-      {"Day": "Sunday","DayNum": 7}
-    ],
+    {"Day": "Monday", "DayNum": 1},
+    {"Day": "Tuesday", "DayNum": 2},
+    {"Day": "Wednesday", "DayNum": 3},
+    {"Day": "Thursday", "DayNum": 4},
+    {"Day": "Friday", "DayNum": 5},
+    {"Day": "Saturday", "DayNum": 6},
+    {"Day": "Sunday", "DayNum": 7}
   ];
 }
 
-/* 
-class DayList {
-  final String day;
-
-  DayList({required this.day});
-
-  factory DayList.fromJson(Map<String, dynamic> json) {
-    return DayList(day: json['day']);
-  }
-} */
 class Main {
   double? temp;
   double? feelsLike;

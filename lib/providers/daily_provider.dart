@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hava_durumu/models/current_weather_response.dart';
 import 'package:hava_durumu/models/daily_weather_response.dart';
 import 'package:hava_durumu/services/api_service.dart';
 

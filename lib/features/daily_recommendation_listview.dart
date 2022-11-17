@@ -2,13 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hava_durumu/core/app_constant.dart';
-import 'package:hava_durumu/pages/weather_detail_screen.dart';
 import 'package:hava_durumu/providers/daily_bottom_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
-import '../models/current_weather_response.dart';
 
 class DailyRecommendationListView extends StatefulWidget {
   const DailyRecommendationListView({super.key});
@@ -16,6 +12,15 @@ class DailyRecommendationListView extends StatefulWidget {
   @override
   State<DailyRecommendationListView> createState() =>
       _DailyRecommendationListViewState();
+}
+
+extension StringCasingExtension on String {
+  String toCapitalized() =>
+      length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
+  String toTitleCase() => replaceAll(RegExp(' +'), ' ')
+      .split(' ')
+      .map((str) => str.toCapitalized())
+      .join(' ');
 }
 
 class _DailyRecommendationListViewState
@@ -71,10 +76,18 @@ class _DailyRecommendationListViewState
                           SizedBox(height: 1.h),
                           Padding(
                             padding: const EdgeInsets.only(left: 35),
-                            child: Text(
-                                "${value.dailyBottomResponse.list![index].weather![0].description.toString().split(".").last}",
-                                //value.dailyBottomResponse.list![index].weather![0].description.toString(), çalışmayan örnek
-                                style: TextStyle(color: Color(0xff201C1C))),
+                            child: Row(
+                              children: [
+                                Text(
+                                    //hava durumu yazısı
+                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").first.toCapitalized()} ",
+                                    style: TextStyle(color: Color(0xff201C1C))),
+                                Text(
+                                    //hava durumu yazısı
+                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").last.toCapitalized()}",
+                                    style: TextStyle(color: Color(0xff201C1C))),
+                              ],
+                            ),
                           ),
                           Spacer(),
                         ],
@@ -87,7 +100,7 @@ class _DailyRecommendationListViewState
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                            "${value.dailyBottomResponse.list![index].main?.temp}ºC",
+                            "${value.dailyBottomResponse.list![index]?.main!.temp}ºC",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff201C1C))),

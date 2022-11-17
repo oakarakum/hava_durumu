@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 import 'dart:developer';
+import 'package:dio/dio.dart';
 import 'package:hava_durumu/models/daily_weather_bottom_response.dart';
 import 'package:hava_durumu/models/daily_weather_response.dart';
 
@@ -42,8 +43,35 @@ Future<DailyWeatherResponse?> getDailyData(context) async {
 Future<WeatherBottomDailyResponse?> getDailyBottomDatas(context) async {
   WeatherBottomDailyResponse dailybottomResponse;
   try {
+    final response3 = await Dio().get(
+        "https://api.openweathermap.org/data/2.5/forecast",
+        queryParameters: {
+          "lat": 41.025224,
+          "lon": 29.019222,
+          "appid": "9b0ef33925d3f78d3c7591c48ca1cce9",
+          "units": "metric"
+        });
+
+    print(response3.data);
+
+    return dailybottomResponse =
+        WeatherBottomDailyResponse.fromJson(response3.data);
+  } catch (a) {
+    log(a.toString());
+  }
+  return null;
+} 
+
+
+
+
+//Dio'suz örnek
+
+/* Future<WeatherBottomDailyResponse?> getDailyBottomDatas(context) async {
+  WeatherBottomDailyResponse dailybottomResponse;
+  try {
     final response3 = await http.get(Uri.parse(
-        "https://api.openweathermap.org/data/2.5/forecast/?appid=aec7cf9d7f5c41cbdd4589acb0219dbb&id=524901&units=metric"));
+        "https://api.openweathermap.org/data/2.5/forecast?lat=41.025224&lon=29.019222&appid=9b0ef33925d3f78d3c7591c48ca1cce9&units=metric"));
     print(response3.body);
 
     return dailybottomResponse =
@@ -52,4 +80,4 @@ Future<WeatherBottomDailyResponse?> getDailyBottomDatas(context) async {
     log(a.toString());
   }
   return null;
-}
+} */

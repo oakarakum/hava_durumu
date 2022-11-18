@@ -1,6 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:hava_durumu/providers/daily_provider.dart';
+import 'package:hava_durumu/providers/weather_provider.dart';
 
 class Logging extends Interceptor {
+  WeatherProvider? weatherProvider;
+  DailyProvider? dailyProvider;
+
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     print('REQUEST ${options.method} => ${options.path}');
@@ -12,8 +17,9 @@ class Logging extends Interceptor {
     //print('RESPONSE ${response.statusCode} => ${response.requestOptions.path}');
     switch (response.statusCode) {
       case 200:
-        print("Bşarılı");
-
+        print(dailyProvider!.dailyResponse.city);
+        /* print("Bşarılı");
+        print(weatherProvider!.response.main!.temp); */
         break;
       default:
     }

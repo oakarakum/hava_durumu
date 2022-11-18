@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hava_durumu/providers/daily_bottom_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:string_extensions/string_extensions.dart';
 
 class DailyRecommendationListView extends StatefulWidget {
   const DailyRecommendationListView({super.key});
@@ -14,7 +15,8 @@ class DailyRecommendationListView extends StatefulWidget {
       _DailyRecommendationListViewState();
 }
 
-extension StringCasingExtension on String {
+// İlk harfi büyük olsun extension'ı
+/* extension StringCasingExtension on String {
   String toCapitalized() =>
       length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
   String toTitleCase() => replaceAll(RegExp(' +'), ' ')
@@ -22,7 +24,7 @@ extension StringCasingExtension on String {
       .map((str) => str.toCapitalized())
       .join(' ');
 }
-
+ */
 class _DailyRecommendationListViewState
     extends State<DailyRecommendationListView> {
   DailyBottomProvider? dailyBottomProviderr;
@@ -80,11 +82,13 @@ class _DailyRecommendationListViewState
                               children: [
                                 Text(
                                     //hava durumu yazısı
-                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").first.toCapitalized()} ",
+                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").first} "
+                                        .capitalize!,
                                     style: TextStyle(color: Color(0xff201C1C))),
                                 Text(
                                     //hava durumu yazısı
-                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").last.toCapitalized()}",
+                                    "${value.dailyBottomResponse.list![index]!.weather![0]!.description.toString().split(".").last.split("_").last}"
+                                        .capitalize!,
                                     style: TextStyle(color: Color(0xff201C1C))),
                               ],
                             ),

@@ -104,7 +104,7 @@ class _DailyRecommendationListViewState
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                            "${value.dailyBottomResponse.list![index]?.main!.temp}ºC",
+                            "${value.dailyBottomResponse.list![index]?.main!.temp!.toInt().toString()}ºC",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff201C1C))),

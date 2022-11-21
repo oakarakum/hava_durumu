@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hava_durumu/models/daily_weather_bottom_response.dart';
 import 'package:hava_durumu/models/daily_weather_response.dart';
 import 'package:hava_durumu/services/logging.dart';
@@ -51,8 +52,29 @@ Future<CurrentWeatherResponse?> getCurrentData(context) async {
           "units": "metric"
         });
     print(response1.data);
+    weatherResponse = CurrentWeatherResponse.fromJson(response1.data);
+    switch (response1.statusCode) {
+      case 200:
+        {
+          Fluttertoast.showToast(msg: "Page Succesfully loaded.");
+        }
 
-    return weatherResponse = CurrentWeatherResponse.fromJson(response1.data);
+        break;
+      case 404:
+        {
+          Fluttertoast.showToast(msg: "Error Code :404,Connection Error.");
+        }
+        break;
+      case 500:
+        {
+          Fluttertoast.showToast(
+              msg:
+                  "Error Code :500, The server has encountered a situation it does not know how to handle.");
+        }
+        break;
+      default:
+    }
+    return weatherResponse;
   } catch (a) {
     log(a.toString());
   }
